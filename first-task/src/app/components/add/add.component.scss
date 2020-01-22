@@ -1,0 +1,110 @@
+@import '../../../assets/scss/variables';
+
+.add{
+    padding: 3em;
+    .inputs{
+        & > div{
+            height: 120px;
+            &.title{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+        }
+        .input{
+            display: flex;
+            width: 100%;
+            label{
+                text-transform: capitalize;
+                border-bottom: 3px solid $base-color;
+                padding-right: $padding;
+            }
+            .custom-input{
+                width: 100%;
+                border: none;
+                border-bottom: 2px solid #ccc;
+                outline: none;
+                padding: $padding - .5;
+            }
+        }
+        .textarea{
+            @extend .input;
+            height: 100%;
+            textarea{
+                resize: none;
+                height: 100%;
+            }
+        }
+        .action{
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            .btn{
+                @extend .skew;
+                color: #fff;
+                padding: $padding $padding+2;
+                text-transform: uppercase;
+                font-weight: bold;
+                &:after{
+                    background: $base-color;
+                }
+                &:disabled {
+                    &:after{
+                        background: rgba( $base-color, .8);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.articles{
+    article{
+        text-align: center;
+        padding: $padding;
+        .head{
+            @extend .skew;
+            position: relative;
+            &:after{
+                background: $base-color;
+            }
+            h3{
+                color: #fff;
+                text-align: center;
+                padding: $padding+1;
+                text-transform: uppercase;
+            }
+            .remove{
+                position: absolute;
+                top: 0;
+                right: 0;
+                font-size: 18px;
+                padding: $padding - 0.5;
+                display: none;
+                i{
+                    color: #e92727;
+                }
+            }
+        }
+        p{
+            color: $text-color;
+            text-align: center;
+        }
+        a{
+            font-weight: bold;
+            color: $text-color;
+            text-transform: uppercase;
+        }
+        &:hover{
+            .head{
+                &:after{
+                    background: rgba( $base-color, .8);
+                }
+                .remove{
+                    display: block;
+                }
+            }
+        }
+
+    }
+}

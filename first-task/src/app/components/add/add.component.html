@@ -1,0 +1,43 @@
+<div class="add">
+    <div class="container">
+        <form class="row align-items-center inputs" (ngSubmit)="add(f)" #f="ngForm">
+            <div class="col-md-4 title">
+                <div class="input">
+                    <label>title</label>
+                    <input class="custom-input" type="text" placeholder="" name="title" [(ngModel)]="title" required>
+                </div>
+                <div class="input">
+                    <label>link</label>
+                    <input class="custom-input" type="text" placeholder="" name="link" [(ngModel)]="link" required>
+                </div>
+            </div>
+            <div class="col-md-4 summary">
+                <div class="textarea">
+                    <label>summary</label>
+                    <textarea class="custom-input" name="" id="" name="summary" [(ngModel)]="summary" required></textarea>
+                </div>
+            </div>
+            <div class="col-md-4 action">
+                <button class="btn" type="submit" [disabled]="!f.valid">
+                    add
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="articles">
+    <div class="container">
+        <div class="row">
+            <article class="col-md-4" *ngFor="let article of articles; let i = index">
+                <header class="head">
+                    <h3>{{article.title}}</h3>
+                    <button class="remove" (click)="remove(i)">
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                    </button>
+                </header>
+                <p>{{ article.summary }}</p>
+                <a href="{{ article.link }}" target="_blank">read more</a>
+            </article>
+        </div>
+    </div>
+</div>

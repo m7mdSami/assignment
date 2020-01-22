@@ -1,0 +1,19 @@
+<div class="slider" [ngStyle]="{'background-image': 'url(' + sliders[start].url + ')'}">
+    <div class="overlay">
+        <div class="describe">
+            <div class="text">
+                <p>we help both <strong>industrial</strong></p>
+                <p>and <strong>digital</strong> engineers</p>
+                <p><strong>increase</strong> revenue</p>
+            </div>
+            <div class="control">
+                <button class="btn" (click)="next(start)">
+                    <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                </button>
+                <button class="btn" (click)="prev(start)">
+                    <i class="fa fa-long-arrow-left" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+<header class="header">
+    <div class="container d-flex align-items-center justify-content-between">
+        <div class="logo">
+            <h3>logo</h3>
+        </div>
+        <div class="menu" [ngClass]="{'show':menuShow}">
+            <nav>
+                <ul class="d-flex">
+                    <li><a href="">industrial automation</a></li>
+                    <li><a href="">digital transformayion</a></li>
+                    <li><a href="">outsourcing</a></li>
+                    <li><a href="">about</a></li>
+                    <li><a href="">knowlage hub</a></li>
+                    <li><a href="">innovation</a></li>
+                    <li><a href="">careers</a></li>
+                    <li><a href="">connect</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="menu-toggler">
+            <button class="btn" (click)="toggleMenu()">
+                <i class="fa fa-navicon" aria-hidden="true"></i>
+            </button>
+        </div>
+    </div>
+</header>
